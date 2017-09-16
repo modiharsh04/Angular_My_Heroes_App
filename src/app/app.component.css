@@ -1,12 +1,16 @@
 h1 {
-  font-size: 1.2em;
-  color: #999;
+  font-size: 2em;
+  color: #fc5050;
   margin-bottom: 0;
 }
 h2 {
   font-size: 2em;
   margin-top: 0;
   padding-top: 0;
+}
+nav {
+  background: blue;
+  padding: 20px;
 }
 nav a {
   padding: 5px 10px;

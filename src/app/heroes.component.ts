@@ -8,17 +8,17 @@ import { HeroService } from './hero.service';
 @Component({
   selector: 'app-heroes',
   template: `
-  <h2>My Heroes</h2>
+  <h2>My Team</h2>
   <ul class="heroes">
     <li *ngFor="let hero of heroes" 
     [class.selected]="hero === selectedHero"
-    (click)="onSelect(hero)">
+    (click)="gotoDetail(hero)">
       <span class="badge">{{hero.id}}</span> {{hero.name}}
     </li>
   </ul>
   <div *ngIf="selectedHero">
     <h2>
-      {{selectedHero.name | uppercase}} is my heroes
+      {{selectedHero.name | uppercase}} is my hero
     </h2>
     <button (click)="gotoDetail()">View Details</button>
   </div>
@@ -47,7 +47,7 @@ export class HeroesComponent implements OnInit {
   	this.selectedHero = hero;
   }
 
-  gotoDetail(): void {
-    this.router.navigate(['/detail', this.selectedHero.id]);
+  gotoDetail(hero): void {
+    this.router.navigate(['/detail', hero.id]);
   }
 }

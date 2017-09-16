@@ -1,8 +1,18 @@
+.hero_detail{
+  background-color: #262626;
+  padding: 15px;
+  display: inline-block;
+  width: auto;
+  color: white;
+}
+h2{
+  color: white;
+}
 label {
   display: inline-block;
   width: 3em;
   margin: .5em 0;
-  color: #607D8B;
+  /*color: #607D8B;*/
   font-weight: bold;
 }
 input {
