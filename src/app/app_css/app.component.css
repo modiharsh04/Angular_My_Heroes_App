@@ -1,6 +1,6 @@
 h1 {
   font-size: 2em;
-  color: #fc5050;
+  color: #ffffff;
   margin-bottom: 0;
 }
 h2 {
@@ -13,7 +13,7 @@ nav {
   padding: 20px;
 }
 nav a {
-  padding: 5px 10px;
+  padding: 7px 15px;
   text-decoration: none;
   margin-top: 10px;
   display: inline-block;

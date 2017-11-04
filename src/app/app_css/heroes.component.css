@@ -1,0 +1,45 @@
+.heroes{
+  list-style: none;
+  padding: 0;
+  width: auto;
+  max-width: 300px;
+}
+
+.heroes li{
+  cursor: pointer;
+  background-color: #EEE;
+  margin: 10px 0;
+  padding: 5px;
+}
+
+.heroes li:hover {
+  color: #607D8B;
+  background-color: #DDD;
+  margin-left: 2px;
+}
+
+.heroes .badge {
+  font-size: small;
+  color: #ffffff;
+  background-color: #607D8B;
+  padding: 6px;
+  border-radius: 4px 0 0 4px;
+  margin-right: 2px;
+  margin-left: -3px;
+}
+
+.heroes .delete {
+  cursor: pointer;
+  float:right;
+  background-color: #3a3a3a !important;
+  color:#ffffff;
+  margin-right: -2px;
+  padding: 5px 8px;
+  margin-top: -5px;
+  border-radius: 4px 0;
+}
+
+.heroes .delete:hover {
+  background-color: red !important;
+  z-index: 10;
+}

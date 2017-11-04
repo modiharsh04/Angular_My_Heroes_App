@@ -7,32 +7,8 @@ import { HeroService } from './hero.service';
 
 @Component({
   selector: 'app-heroes',
-  template: `
-  <h2>My Team</h2>
-  <div>
-    <label>Hero name:</label> <input #heroName />
-    <button (click)="add(heroName.value); heroName.value=''">
-      Add
-    </button>
-  </div>
-  <ul class="heroes">
-    <li *ngFor="let hero of heroes" 
-    [class.selected]="hero === selectedHero"
-    (click)="gotoDetail(hero)">
-      <span class="badge">{{hero.id}}</span> 
-      <span>{{hero.name}}</span>
-      <button class="delete"
-        (click)="delete(hero); $event.stopPropagation()">x</button>
-    </li>
-  </ul>
-  <div *ngIf="selectedHero">
-    <h2>
-      {{selectedHero.name | uppercase}} is my hero
-    </h2>
-    <button (click)="gotoDetail()">View Details</button>
-  </div>
-  `,
-  styleUrls:[`./heroes.component.css`]
+  templateUrl: './app_pages/heroes.component.html',
+  styleUrls:['./app_css/heroes.component.css']
 })
 
 export class HeroesComponent implements OnInit {
