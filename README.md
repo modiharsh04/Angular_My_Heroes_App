@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # MyApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.7.
@@ -26,3 +27,8 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+=======
+# Angular_My_Heroes_App
+I have this app online published and can be seen on the link below
+### https://modiharsh04.github.io/Angular_My_Heroes_App/dashboard ###
+>>>>>>> 605ab9ea148717d1646386b8938912f77f4b38cf

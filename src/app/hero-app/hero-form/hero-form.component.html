@@ -1,0 +1,28 @@
+<mat-card class='container'>
+  <form (ngSubmit)="add()" #playerForm="ngForm">
+  <div class="example-container">
+      <mat-card-header>
+        <mat-card-title><h2>Add your Player</h2></mat-card-title>
+      </mat-card-header>
+      <mat-form-field>
+        <input matInput [(ngModel)]="player.name" placeholder="Player Name" name="PlayerName" required>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-select placeholder="Role" [(ngModel)]="player.role" name="Role" required>
+          <mat-option value="All rounder">All rounder</mat-option>
+          <mat-option value="Batsman">Batsman</mat-option>
+          <mat-option value="Bowler">Bowler</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-radio-group [(ngModel)]="player.bats" name="bats">
+        <mat-radio-button value="Right arm batsman">Right arm batsman</mat-radio-button>
+        <mat-radio-button value="Left arm batsman">Left arm batsman</mat-radio-button>
+      </mat-radio-group>
+      <mat-form-field>
+        <input matInput [(ngModel)]="player.bowl" placeholder="He bowls:" name="bowls" required>
+      </mat-form-field>
+      <button mat-raised-button color="primary" [disabled]="!playerForm.form.valid" type="submit">Add</button>
+    
+  </div>
+  </form>
+</mat-card>

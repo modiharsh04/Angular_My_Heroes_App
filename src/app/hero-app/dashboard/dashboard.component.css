@@ -43,6 +43,12 @@ h4 {
   cursor: pointer;
   color: #607d8b;
 }
+
+.module:hover .badge{
+  color: #eee;
+  background-color: #607D8B;
+}
+
 @media (min-width: 600px) {
   .col-1-4 {
     width: 50%;

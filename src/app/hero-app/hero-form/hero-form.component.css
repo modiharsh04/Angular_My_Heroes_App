@@ -1,0 +1,19 @@
+.container {
+	margin: auto;
+}
+mat-radio-group{
+	margin-bottom: 8px;
+}
+@media(min-width: 650px){
+	.container{
+		width: 600PX;
+	}
+}
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 100%;
+}

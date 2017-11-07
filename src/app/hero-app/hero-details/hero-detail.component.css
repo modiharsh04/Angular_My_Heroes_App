@@ -1,0 +1,45 @@
+.container{
+  margin: auto;
+}
+.player{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+.hero_detail{
+  background-color: #0091EA;
+  color: white;
+  flex: 0 1 auto;
+}
+h1{
+  color: white;
+}
+.image{
+  flex: 0 1 auto;
+}
+
+@media (min-width: 600px){
+  .container {
+    width: 600PX;
+  }
+}
+label {
+  display: inline-block;
+  color: #000000;
+  width: 3.5em;
+  margin: .5em 0;
+  font-weight: bold;
+  
+}
+input {
+  height: 2em;
+  width: 180px;
+  font-size: 1em;
+  padding-left: .4em;
+}
+.button-group{
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
+
+}
