@@ -1,9 +1,13 @@
-import { Component, Input, OnInit, Inject } from '@angular/core';
+import { 
+	Component, Input, OnInit, Inject, ElementRef, Renderer2, ViewChild
+} from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Location }                 from '@angular/common';
 import { Title } from '@angular/platform-browser';
+import { MatSnackBar } from '@angular/material';
 
 import 'rxjs/add/operator/switchMap';
+import {Observable} from 'rxjs/Observable';
 
 import { HeroService } from './../hero-services/hero.service';
 import { Hero } from './../hero-services/hero';
@@ -16,8 +20,10 @@ import { HeroesComponent } from './../hero-list/heroes.component';
 })
 
 export class HeroDetailComponent implements OnInit {
-
 	hero: Hero;
+	init:Observable<any>;
+	
+	@ViewChild('player') player:ElementRef;
 
 	constructor(
 		private heroService: HeroService,
@@ -25,7 +31,9 @@ export class HeroDetailComponent implements OnInit {
 		private location: Location,
 	  	private title:Title,
     	private heroesComponent: HeroesComponent,
-    	private router:Router
+    	private router:Router,
+    	private renderer:Renderer2,
+    	private snackBar: MatSnackBar
 	) {}
 
 	ngOnInit(): void {
@@ -34,7 +42,29 @@ export class HeroDetailComponent implements OnInit {
 			.subscribe((hero) => {
 				this.hero = hero;
 				this.setTitle(this.hero.name);
+				this.focus();
+			},(error)=>{
+				let snachbarRef = this.alert('No player found','Got it!');
+				snachbarRef.afterDismissed().subscribe(()=>{
+					this.location.back();
+				});
 			});
+	}
+
+	ngAfterViewInit(){
+		return Promise.resolve();
+	}
+
+	alert(message: string, action: string) {
+		return this.snackBar.open(message, action, {
+			duration: 2000,
+		});
+	}
+
+	focus(){
+		this.ngAfterViewInit().then(()=>{
+			this.player.nativeElement.scrollIntoView(true);
+		});
 	}
 
 	setTitle(msg:string){

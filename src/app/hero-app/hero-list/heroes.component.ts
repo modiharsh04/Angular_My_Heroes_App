@@ -16,6 +16,7 @@ import { Subject } from 'rxjs/Rx';
 
 export class HeroesComponent implements OnInit {
   heroes: Hero[];
+  selectedHero: Hero;
   public static changed: Subject<boolean> = new Subject();
 
   constructor(
@@ -27,6 +28,10 @@ export class HeroesComponent implements OnInit {
     });
   }
 
+  ngOnInit(): void {
+    this.getHeroes();
+    this.title.setTitle("The Team India");
+  }
 
   getHeroes(): void {
   	this.heroService.getHeroes().then(heroes => this.heroes = heroes);
@@ -45,12 +50,8 @@ export class HeroesComponent implements OnInit {
     this.router.navigate(['/heroes/add',this.heroes.length+11]);
   }
 
-  ngOnInit(): void {
-  	this.getHeroes();
-    this.title.setTitle("The Team India");
-  }
-
   gotoDetail(hero): void { 
+    this.selectedHero = hero;
     this.router.navigate(['/heroes', hero.id]);
   }
 }

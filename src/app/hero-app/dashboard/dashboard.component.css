@@ -1,8 +1,6 @@
-[class*='col-'] {
+.col-1-4 {
   float: left;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 20px;
+  padding: 20px 10px;
 }
 
 a {

@@ -50,6 +50,16 @@ h2{
   border-radius: 0 4px 4px 0;
 }
 
+.selected{
+  color: #ffffff;
+  background-color: #607D8B;
+}
+
+.selected .badge{
+  background-color: #EEE;
+  color: #222;
+}
+
 .heroes .delete {
   cursor: pointer;
   color: #607D8B;

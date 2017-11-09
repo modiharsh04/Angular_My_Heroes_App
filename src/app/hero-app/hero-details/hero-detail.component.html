@@ -1,24 +1,26 @@
-<mat-card class="container">
-	<div *ngIf="hero">
-		<div class="player">
-			<div class="image">
-			<img src="assets/images/players/{{hero.id}}.png" onerror="this.src='assets/images/players/0.png'">
+<div  class="container" #player>
+	<mat-card>
+		<div *ngIf="hero">
+			<div class="player">
+				<div class="image">
+				<img src="assets/images/players/{{hero.id}}.png" onerror="this.src='assets/images/players/0.png'">
+				</div>
+				<mat-card class="hero_detail">
+						<h1>{{hero.name}}</h1>
+						<div><label>ID: </label> {{hero.id}} </div>
+						<div>
+							<label>Name: </label>
+							<input [(ngModel)]="hero.name" placeholder="name"/>
+						</div>
+						<div><label>Role:</label> {{hero.role}}</div>
+						<div><label>Bats:</label> {{hero.bats}}</div>
+						<div><label>Bowls:</label> {{hero.bowl}}</div>
+				</mat-card>
 			</div>
-			<mat-card class="hero_detail">
-					<h1>{{hero.name}}</h1>
-					<div><label>ID: </label> {{hero.id}} </div>
-					<div>
-						<label>Name: </label>
-						<input [(ngModel)]="hero.name" placeholder="name"/>
-					</div>
-					<div><label>Role:</label> {{hero.role}}</div>
-					<div><label>Bats:</label> {{hero.bats}}</div>
-					<div><label>Bowls:</label> {{hero.bowl}}</div>
-			</mat-card>
+			<div class="button-group">
+				<button mat-raised-button color="warn" (click)="goBack()">Close</button>
+				<button mat-raised-button color="primary" (click)="save()">Save</button>
+			</div>
 		</div>
-		<div class="button-group">
-			<button mat-raised-button color="warn" (click)="goBack()">Close</button>
-			<button mat-raised-button color="primary" (click)="save()">Save</button>
-		</div>
-	</div>
-</mat-card>
+	</mat-card>
+</div>
