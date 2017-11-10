@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router} from '@angular/router';
+import { Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
 import { Hero } from './../hero-services/hero';
@@ -34,7 +34,9 @@ export class HeroesComponent implements OnInit {
   }
 
   getHeroes(): void {
-  	this.heroService.getHeroes().then(heroes => this.heroes = heroes);
+  	this.heroService.getHeroes().then(heroes => {
+      this.heroes = heroes;
+    });
   }
 
   delete(hero: Hero): void {

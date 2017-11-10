@@ -1,6 +1,7 @@
 .container {
   display: flex;
   flex-flow: column nowrap;
+  height: 100%;
 }
 .col-block{
   padding: 0 0 0 10px;
@@ -30,7 +31,7 @@ nav {
   display: flex;
   flex-flow: row nowrap;
   margin-bottom: 5px;
-  flex: 0 1 auto;
+  flex: 0 0 auto;
 }
 nav a {
   padding: 7px 15px;
@@ -56,7 +57,7 @@ main{
   flex: 1 1 auto;
 }
 footer{
-  flex: 0 1 auto;
+  flex: 0 0 auto;
 }
 
 @media (max-width: 600px){

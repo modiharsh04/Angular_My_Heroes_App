@@ -11,7 +11,6 @@ const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard',  component: DashboardComponent },
   { path: 'heroes',     component: HeroesComponent, children: [
-  	{ path: '', redirectTo:'11', pathMatch:'full' },
   	{ path: ':id', component: HeroDetailComponent },
   	{ path: 'add/:id',     component: HeroFormComponent }
   ]},

@@ -1,5 +1,6 @@
 import { 
-	Component, Input, OnInit, Inject, ElementRef, Renderer2, ViewChild
+	Component, Input, OnInit, 
+	Inject, ElementRef, Renderer2, ViewChild
 } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Location }                 from '@angular/common';
@@ -21,7 +22,6 @@ import { HeroesComponent } from './../hero-list/heroes.component';
 
 export class HeroDetailComponent implements OnInit {
 	hero: Hero;
-	init:Observable<any>;
 	
 	@ViewChild('player') player:ElementRef;
 

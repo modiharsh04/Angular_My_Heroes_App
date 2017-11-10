@@ -35,7 +35,7 @@ export class HeroFormComponent  implements OnInit {
 		this.heroService.createHero(this.player)
 			.then((hero) => {
 				this.heroesComponent.getHeroes();
-				this.router.navigate(['/heroes']);
+				this.router.navigate(['/heroes',hero.id]);
 			});
 	}
 
