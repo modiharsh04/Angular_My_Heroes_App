@@ -5,7 +5,7 @@
   "background_color": "#0091EA",
   "display": "standalone",
   "Scope": "/",
-  "start_url": "/Angular_My_Heroes_App/dashboard",
+  "start_url": "./",
   "description":"The India Cricket Team",
   "icons": [
    {
