@@ -37,7 +37,7 @@
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
 'use strict';
 
-var precacheConfig = [["/assets/images/logo.png","e3cc6d1e9877a9905775484dba6fb59c"],["/assets/images/players/0.png","6558ad93c0305f97eb4ce7c7d65913f1"],["/assets/images/players/11.png","3cf6a81fe3ea769cbff0a01d0c1d246a"],["/assets/images/players/12.png","45e0aec82b3224898d838af83615e514"],["/assets/images/players/13.png","1737cd56d06877da481d09ced0613503"],["/assets/images/players/14.png","72385747e2a845b669305bee1a231d70"],["/assets/images/players/15.png","a1e5f7243c36a086cf370fb965a8ddbd"],["/assets/images/players/16.png","19dedec477d2db66fbc9d059ec368c8e"],["/assets/images/players/17.png","0e0ff1530f5d1363ea06917ac860c686"],["/assets/images/players/18.png","d6bd2bc7b2a784aa20a85a1e7b21b8df"],["/assets/images/players/19.png","4c4333bffec957649e4fdfa0aefdf0e1"],["/assets/images/players/20.png","85af8338090ba735977347e4fcc4f368"],["/assets/images/players/21.png","1adf99900881aed1f1deaf370978bf57"],["/index.html","42e08c5f0ef07d115b2f5851d0cf49bd"],["/inline.f3210e6a932a6c4fe8bd.bundle.js","711c42060500719fdfcc1c52af4cf398"],["/main.4fbafe6ccbbd459456d2.bundle.js","0ac90cb9c989eec62409631b7492572e"],["/polyfills.836127c87907bcf2b11e.bundle.js","084d8b63649424d2e9164d7001e13522"],["/styles.dff7f3042faf3f8162d4.bundle.css","dff7f3042faf3f8162d42a2ee204834b"],["/vendor.60535dd9f08c4eb1c105.bundle.js","4aba88ccf0127fa88c6888fcac4025fa"]];
+var precacheConfig = [];
 var cacheName = 'sw-precache-v3-sw-precache-' + (self.registration ? self.registration.scope : '');
 
 
@@ -229,7 +229,7 @@ self.addEventListener('fetch', function(event) {
 
     // If shouldRespond is still false, check to see if this is a navigation
     // request, and if so, whether the URL matches navigateFallbackWhitelist.
-    var navigateFallback = '/index.html';
+    var navigateFallback = 'Angular_My_Heroes_App/index.html';
     if (!shouldRespond &&
         navigateFallback &&
         (event.request.mode === 'navigate') &&
