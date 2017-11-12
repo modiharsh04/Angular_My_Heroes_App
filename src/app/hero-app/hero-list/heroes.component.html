@@ -10,8 +10,8 @@
     </div>
     <mat-card>
       <ul class="heroes">
-        <li *ngFor=" let hero of heroes" 
-        [class.selected] = "hero === selectedHero"
+        <li *ngFor=" let hero of heroes"
+        [class.selected] = "hero?.id === selectedHero"
         (click)="gotoDetail(hero)" >
           <span class="badge">{{hero.role.slice(0,3) | uppercase}}</span> 
           <span class="text">{{hero.name}}</span>

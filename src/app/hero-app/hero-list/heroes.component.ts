@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
 import { Hero } from './../hero-services/hero';
-import { HeroService } from './../hero-services/hero.service';
+import { HeroService, CommandObj, Command } from './../hero-services/hero.service';
 
 import { Subject } from 'rxjs/Rx';
-
 
 @Component({
   selector: 'app-heroes',
@@ -16,25 +15,31 @@ import { Subject } from 'rxjs/Rx';
 
 export class HeroesComponent implements OnInit {
   heroes: Hero[];
-  selectedHero: Hero;
-  public static changed: Subject<boolean> = new Subject();
+  selectedHero: number;
 
   constructor(
     private router: Router,
     private heroService: HeroService,
-    private title: Title ) {
-    HeroesComponent.changed.subscribe(res => {
-      this.getHeroes();
-    });
+    private title: Title,
+    private route: ActivatedRoute
+  ) {
+
   }
 
   ngOnInit(): void {
     this.getHeroes();
     this.title.setTitle("The Team India");
+    this.heroService.event$.subscribe((cmd)=>{
+      if (cmd.command == Command.CHANGE){
+        this.getHeroes();
+      }
+    });
+    this.selectedHero = +this.route.firstChild.snapshot.params['id'];
   }
 
   getHeroes(): void {
-  	this.heroService.getHeroes().then(heroes => {
+  	this.heroService.getHeroes()
+    .then(heroes => {
       this.heroes = heroes;
     });
   }
@@ -45,15 +50,19 @@ export class HeroesComponent implements OnInit {
         .delete(hero.id)
         .then(() => {
           this.heroes = this.heroes.filter(h => h !== hero);
+          if (this.selectedHero === hero.id){
+            this.gotoDetail(this.heroes[0]);
+          }
         });
   }
 
   addPlayer() {
-    this.router.navigate(['/heroes/add',this.heroes.length+11]);
+    this.selectedHero = this.heroes.length+11;
+    this.router.navigate(['/heroes/add',this.selectedHero]);
   }
 
   gotoDetail(hero): void { 
-    this.selectedHero = hero;
-    this.router.navigate(['/heroes', hero.id]);
+    this.selectedHero = hero.id;
+    this.router.navigate(['/heroes', hero.id],{replaceUrl:true});
   }
 }

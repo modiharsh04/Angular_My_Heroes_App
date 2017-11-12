@@ -1,10 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
-import { HeroesComponent } from "./../hero-list/heroes.component";
 import { Hero } from './../hero-services/hero';
-import { HeroService } from './../hero-services/hero.service';
+import { HeroService} from './../hero-services/hero.service';
 
 @Component({
   selector: 'app-hero-form',
@@ -13,13 +12,14 @@ import { HeroService } from './../hero-services/hero.service';
 })
 export class HeroFormComponent  implements OnInit {
 	player:Hero;
+	@ViewChild('frm') containerRef:ElementRef;
 
 	constructor(
 	  private heroService: HeroService,
-	  private heroesComponent:HeroesComponent,
 	  private router:Router,
 	  private route:ActivatedRoute,
-	  private title:Title ) { }
+	  private title:Title
+	) { }
 
 	ngOnInit(): void {
 		this.route.paramMap
@@ -29,12 +29,13 @@ export class HeroFormComponent  implements OnInit {
 		this.title.setTitle('Add Player');
 	}
 	
-	
+	ngAfterViewInit(){
+		this.containerRef.nativeElement.scrollIntoView(true);
+	}
 
 	add(): void {
 		this.heroService.createHero(this.player)
 			.then((hero) => {
-				this.heroesComponent.getHeroes();
 				this.router.navigate(['/heroes',hero.id]);
 			});
 	}
