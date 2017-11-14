@@ -4,6 +4,7 @@ module.exports = {
   root: 'dist/',
   staticFileGlobs: [
     'dist/index.html',
+    'dist/manifest.json',
     'dist/**.js',
     'dist/**.css',
     'dist/assets/images/logo.png',

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
@@ -13,7 +13,7 @@ import { Subject } from 'rxjs/Rx';
   styleUrls:['./heroes.component.css']
 })
 
-export class HeroesComponent implements OnInit {
+export class HeroesComponent implements OnInit, OnDestroy {
   heroes: Hero[];
   selectedHero: number;
 
@@ -35,6 +35,10 @@ export class HeroesComponent implements OnInit {
       }
     });
     this.selectedHero = +this.route.firstChild.snapshot.params['id'];
+  }
+
+  ngOnDestroy():void{
+    this.title.setTitle("The Team India");
   }
 
   getHeroes(): void {

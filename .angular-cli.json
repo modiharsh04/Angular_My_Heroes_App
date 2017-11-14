@@ -9,9 +9,9 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico",
         "service-worker.js",
-        "manifest.json"
+        "manifest.json",
+        "browserconfig.xml"
       ],
       "index": "index.html",
       "main": "main.ts",
