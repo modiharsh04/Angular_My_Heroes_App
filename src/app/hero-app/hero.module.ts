@@ -15,6 +15,7 @@ import { HeroDetailComponent } from './hero-details/hero-detail.component';
 import { HeroesComponent } from './hero-list/heroes.component';
 import { HeroFormComponent } from './hero-form/hero-from.component';
 import { MaterialModule } from './material.module';
+import { ScoreService }  from './hero-services/scores.service';
 
 
 @NgModule({
@@ -33,7 +34,7 @@ import { MaterialModule } from './material.module';
     HttpModule,
     MaterialModule
   ],
-  providers: [HeroService,HeroesComponent,Title]
+  providers: [HeroService,HeroesComponent,Title, ScoreService]
 })
 
 export class HeroModule { }

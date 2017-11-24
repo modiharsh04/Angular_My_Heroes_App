@@ -8,6 +8,8 @@ import { HeroModule } from './hero-app/hero.module';
 import { FooterComponent } from './shared/common/footer/footer.component';
 import { HeaderComponent } from './shared/common/header/header.component';
 import { SnackBarHelper } from './shared/helpers/snackBar.service'
+import { MaterialModule } from './material.module';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { SnackBarHelper } from './shared/helpers/snackBar.service'
   imports: [
     AppRoutingModule,
     HeroModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [SnackBarHelper],
   bootstrap: [AppComponent]

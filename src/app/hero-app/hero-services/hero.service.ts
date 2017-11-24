@@ -26,7 +26,7 @@ export class CommandObj{
 @Injectable()
 export class HeroService {
 	private heroesUrl = 'api/heroes';  // URL to web api
-	private myEvent = new Subject<CommandObj>();	
+	private myEvent = new Subject<CommandObj>();
 	event$ = this.myEvent.asObservable();
 
 

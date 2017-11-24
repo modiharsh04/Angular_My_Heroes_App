@@ -14,14 +14,17 @@ h1 {
   margin-bottom: 0;
 }
 
-nav {
+.nav{
   background: #0091EA;
-  padding: 20px;
-  display: flex;
-  flex-flow: row nowrap;
   margin-bottom: 5px;
   flex: 0 0 auto;
 }
+
+nav{
+  display: flex;
+  flex-flow: row nowrap;
+}
+
 nav a {
   padding: 7px 15px;
   text-decoration: none;
